@@ -1,0 +1,41 @@
+<!-- parent.component.html -->
+ <div class="horizontal-padding">
+
+    <app-card [colspan]="'2'" [rowspan]="'1'" [rowHeight]="'350px'">
+        <div card-header>
+            User Profile
+        </div>
+        <div card-title>
+            Dynamic Card Title
+        </div>
+        <div card-content>
+            <p>This is dynamic content projected into the card.</p>
+        </div>
+    </app-card>
+    
+    
+    <div>
+        <app-card [colspan]="'1'" [rowspan]="'1'" [rowHeight]="'350px'">
+            <div card-header>
+                Admin Profile
+            </div>
+            <div card-title>
+                Dynamic Card Title
+            </div>
+            <div card-content>
+                <p>This is dynamic content projected into the card.</p>
+            </div>
+        </app-card>
+        <app-card [colspan]="'1'" [rowspan]="'1'" [rowHeight]="'350px'">
+            <div card-header>
+                Admin Profile
+            </div>
+            <div card-title>
+                Dynamic Card Title
+            </div>
+            <div card-content>
+                <p>This is dynamic content projected into the card.</p>
+            </div>
+        </app-card>
+    </div>
+ </div>

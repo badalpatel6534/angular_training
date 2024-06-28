@@ -1,0 +1,73 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    id="sideNavId"
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar><img src="https://www.synoverge.com/static/media/logo.1887063fc6168161b242.png" alt="synoverge" width="80%" height="80%"></mat-toolbar>
+    <mat-nav-list>
+      @for (item of rootRoutes; track $index) {
+      <a
+        mat-list-item
+        [routerLink]="item.path"
+        #link="routerLinkActive"
+        routerLinkActive
+        [activated]="link.isActive"
+      >
+        {{ item.title }}
+      </a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      @if (isHandset$ | async) {
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      }
+      <!-- <span>m3-angular</span> -->
+
+      
+      <div class="flex-spacer"></div>
+
+      <button
+        class="theme-switch"
+        type="button"
+        aria-label="Toggle theme"
+        mat-icon-button
+        (click)="toggleTheme()"
+        matTooltip="Toggle theme"
+      >
+        <mat-icon>
+          {{ theme() === "light" ? "light_mode" : "dark_mode" }}
+        </mat-icon>
+      </button>
+
+       
+      <button
+        class="theme-switch"
+        type="button"
+        aria-label="Logout"
+        mat-icon-button
+        (click)="logout()"
+        matTooltip="Toggle theme"
+      >
+        <mat-icon>logout</mat-icon>
+      </button>
+
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

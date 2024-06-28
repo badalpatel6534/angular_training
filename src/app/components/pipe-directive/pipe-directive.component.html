@@ -1,0 +1,116 @@
+<div class="horizontal-padding">
+
+  <div class="container">
+    <div class="left-side">
+      <!---------------------------------------------- Custom Pipe Pure default it's pure ------------------------->
+      <div>
+        <h2>Pure Pipe</h2>
+        <span>Age Pipe {{myAge | age}}</span>
+      </div>
+
+      <!---------------------------------------------- Custom pipe Impure --------------------------------------------->
+      <div>
+        <h2>Impure Pipe</h2>
+        <button mat-stroked-button (click)="changeArray()">Add Number</button>
+        <ul>
+          <li *ngFor="let number of numbers | doubleNumber">
+            {{ number }}
+          </li>
+        </ul>
+      </div>
+
+      <!------------------------------------------------ Default Pipes --------------------------------------------->
+      <div>
+        <h2>Original Text</h2>
+        <p>{{ text }}</p>
+
+        <h2>Uppercase Pipe</h2>
+        <p>{{ text | uppercase }}</p>
+
+        <h2>Lowercase Pipe</h2>
+        <p>{{ text | lowercase }}</p>
+
+        <h2>Titlecase Pipe</h2>
+        <p>{{ text | titlecase }}</p>
+
+        <h2>Date Pipe</h2>
+        <p>{{ today | date }}</p>
+        <p>{{ today | date:'fullDate' }}</p>
+        <p>{{ today | date:'shortTime' }}</p>
+
+        <h2>Currency Pipe</h2>
+        <p>{{ price | currency }}</p>
+        <p>{{ price | currency:'EUR' }}</p>
+
+        <h2>JSON Pipe</h2>
+        <pre>{{ user | json }}</pre>
+      </div>
+    </div>
+    <div class="vertical-line"></div>
+
+    <div class="right-side">
+      <!------------------------------------------------ Component Directive --------------------------------------------->
+      <div>
+        <h1>Component Directives</h1>
+        <div class="editor-container">
+          <pre>
+            {{componentDirective}}
+          </pre>
+          
+        </div>
+      </div>
+
+      <!------------------------------------------------ Structural Directive --------------------------------------------->
+      <div>
+        <h1>Structural Directives</h1>
+        <span>{{structuralDirective}}</span>
+        <div class="vertical-padding">
+          <button mat-stroked-button (click)="showHeroes = !showHeroes">
+            @if(showHeroes) {
+              Hide Heros
+            } @else {
+              Show Heros
+            }
+          </button>
+          @if(showHeroes) {
+            <h2>Heroes List</h2>
+            <!-- Structural Directive: @ngFor -->
+            <ul>
+              @for(hero of heroes; track hero.name) {
+                <li>{{ hero.name }}: {{ hero.description }}</li>
+              }
+            </ul>
+          }
+
+        </div>
+      </div>
+
+      <!------------------------------------------------ Built-in Attribute Directive --------------------------------------------->
+      <div>
+        <h1>Built-in Attribute Directives</h1>
+        <span>{{builtInAttributeDirective}}</span>
+        <div class="vertical-padding">
+          <div class="vertical-padding" [ngClass]="{'active-attribute-directive': isActive, 'disabled-attribute-directive': isDisabled}">
+            This div will have 'active' and 'disabled' classes based on the variable.
+          </div>
+
+          <button mat-stroked-button (click)="toggleActive()">Toggle Active</button>
+          <button mat-stroked-button (click)="toggleDisabled()">Toggle Disabled</button>
+
+
+        </div>
+      </div>
+
+      <!------------------------------------------------ Custom Directive --------------------------------------------->
+      <div>
+        <h1>Custom Directives</h1>
+        <div>
+          <button mat-stroked-button (debounceClick)="submitClick()" appDebounceClick >Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+</div>

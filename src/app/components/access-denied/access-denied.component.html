@@ -1,0 +1,10 @@
+<div class="access-denied-container">
+    <h1>Access Denied</h1>
+    <div class="justify-content-center">
+        <ng-lottie [options]="options" (animationCreated)="animationCreated($event)" width="400px" height="400px"/>
+    </div>
+
+    <p>Sorry, you do not have permission to view this page.</p>
+    <p>If you believe this is an error, please contact the administrator.</p>
+    <a routerLink="/dashboard" class="btn btn-primary">Dashboard</a>
+  </div>

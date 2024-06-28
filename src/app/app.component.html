@@ -1,0 +1,22 @@
+<!-- app.component.html -->
+<!-- <ng-container *ngIf="authService.isLogin$ | async as isLoggedIn">
+  @if (isLoggedIn) {
+    <router-outlet></router-outlet>
+  } @else {
+    <app-layout>
+      <router-outlet></router-outlet>
+    </app-layout>
+  }
+</ng-container>
+<router-outlet></router-outlet> -->
+
+<!-- app.component.html -->
+<ng-container *ngIf="isLoggedIn; else notLoggedIn">
+  <app-layout>
+    <router-outlet></router-outlet>
+  </app-layout>
+
+</ng-container>
+<ng-template #notLoggedIn>
+  <router-outlet></router-outlet>
+</ng-template>

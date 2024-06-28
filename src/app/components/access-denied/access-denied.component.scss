@@ -1,0 +1,30 @@
+.access-denied-container {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .access-denied-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .access-denied-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .access-denied-container .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .access-denied-container .btn:hover {
+    background-color: #0056b3;
+  }
+  

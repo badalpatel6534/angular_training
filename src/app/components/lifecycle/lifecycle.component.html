@@ -1,0 +1,9 @@
+<div class="horizontal-padding">
+    <h2>Angular Lifecycle Hooks Demo</h2>
+    <div class="container">
+        <div *ngFor="let hook of lifecycleHooks; let i = index" class="node">
+            {{ hook }}
+            <div *ngIf="i < lifecycleHooks.length - 1" class="arrow">↓</div>
+        </div>
+    </div>
+</div>

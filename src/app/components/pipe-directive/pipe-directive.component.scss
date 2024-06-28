@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    width: 100%;
+  }
+  
+  .left-side {
+    width: 40%;
+    margin-left: 10%;
+    position: relative;
+  }
+  .right-side {
+    width: 80%;
+    margin-left: 10%;
+    position: relative;
+  }
+  
+  .vertical-line {
+    width: 2px; /* Adjust the width of the line as needed */
+    background-color: #000; /* Adjust the color of the line as needed */
+  }
+  
+
+  .active-attribute-directive {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    border: 1px solid #4caf50; /* Green border */
+    padding: 10px;
+    text-align: center;
+    margin: 5px 0;
+    cursor: pointer; /* Pointer cursor */
+  
+  }
+
+  .disabled-attribute-directive {
+    background-color: #e0e0e0; /* Grey background */
+    color: #9e9e9e; /* Grey text */
+    border: 1px solid #e0e0e0; /* Grey border */
+    padding: 10px;
+    text-align: center;
+    margin: 5px 0;
+    cursor: not-allowed; /* Not-allowed cursor */
+  }
+  
