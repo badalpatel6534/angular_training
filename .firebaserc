@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "angular-training-synoverge"
+  },
+  "targets": {
+    "angular-training-f59ec": {
+      "hosting": {
+        "default": [
+          "angular-training-f59ec"
+        ],
+        "angular-training-synoverge": [
+          "angular-training-synoverge"
+        ]
+      }
+    }
+  }
+}

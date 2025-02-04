@@ -1,0 +1,46 @@
+<ng-container *ngIf="hideCDKVirtualScroll; else cdkVirtualScroll">
+  <div class="container">
+    <h2>❌ Traditional Table (Slow for Large Data)</h2>
+    <mat-form-field class="search-box" appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput [formControl]="searchControl" placeholder="Type to search..." />
+    </mat-form-field>
+
+    <table mat-table [dataSource]="filteredTableData" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> Age </th>
+        <td mat-cell *matCellDef="let element"> {{ element.age }} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</ng-container>
+
+<ng-template #cdkVirtualScroll>
+
+  <div class="container">
+    <h2>🚀 CDK Virtual Scroll (Optimized UI)</h2>
+    <mat-form-field class="search-box" appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput [formControl]="virtualSearchControl" placeholder="Search Virtual Scroll Data..." />
+    </mat-form-field>
+
+    <cdk-virtual-scroll-viewport itemSize="50" class="virtual-scroll">
+      <div *cdkVirtualFor="let item of filteredVirtualData" class="virtual-item">
+        {{ item.id }} - {{ item.name }} (Age: {{ item.age }})
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</ng-template>

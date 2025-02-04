@@ -8,7 +8,7 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false"
   >
-    <mat-toolbar><img src="https://www.synoverge.com/static/media/logo.1887063fc6168161b242.png" alt="synoverge" width="80%" height="80%"></mat-toolbar>
+    <mat-toolbar><img src="/assets/logo.png" alt="synoverge" width="80%" height="80%"></mat-toolbar>
     <mat-nav-list>
       @for (item of rootRoutes; track $index) {
       <a

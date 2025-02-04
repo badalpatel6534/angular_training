@@ -66,10 +66,28 @@ export const routes: Routes = [
     canMatch: [rolebasedloadGuard]
   },
   {
+    path: 'rendering-large-data-without-cdk',
+    loadComponent: () => import('./components/rendering-large-data/rendering-large-data.component').then((c) => c.RenderingLargeDataComponent),
+    data: { hideCDKVirtualScroll: true },
+    canActivate: [authGuard]
+  },
+  {
+    path: 'rendering-large-data-with-cdk',
+    loadComponent: () => import('./components/rendering-large-data/rendering-large-data.component').then((c) => c.RenderingLargeDataComponent),
+    data: { hideCDKVirtualScroll: false },
+    canActivate: [authGuard],
+  },
+  {
+    path: 'interceptor',
+    loadComponent: () => import('./components/interceptor-component/interceptor-component.component').then((c) => c.InterceptorComponentComponent),
+    canActivate: [authGuard],
+  },
+  {
     path: 'access-denied',
     loadComponent: () => import('./components/access-denied/access-denied.component').then((c) => c.AccessDeniedComponent),
     canActivate: [authGuard]
   },
+  
   {
     path: '**',
     loadComponent: () => import('./components/page-not-found/page-not-found.component').then((c) => c.PageNotFoundComponent),

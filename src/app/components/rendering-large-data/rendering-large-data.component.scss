@@ -1,0 +1,39 @@
+.example-viewport {
+    height: 400px;
+    width: 300px;
+    border: 1px solid #ccc;
+    overflow: auto;
+  }
+  .example-item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+  }
+  .search-box {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  table {
+    width: 100%;
+  }
+  .virtual-scroll {
+    height: 400px;
+    width: 100%;
+    border: 1px solid #ccc;
+    overflow: auto;
+  }
+  .virtual-item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+  }

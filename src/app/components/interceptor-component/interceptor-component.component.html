@@ -1,0 +1,7 @@
+<div>
+    <button mat-flat-button color="primary" (click)="setToken()">Set Token</button>&nbsp;&nbsp;
+    <button mat-flat-button color="primary" (click)="fetchUsers()">Fetch Users</button>
+    <ul>
+        <li *ngFor="let user of users">{{ user.name }}</li>
+    </ul>
+</div>
