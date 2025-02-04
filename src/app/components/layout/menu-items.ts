@@ -32,10 +32,10 @@ export const menuRoutes = [
         path: 'pipe-directive',
         title: 'Pipe & Directive',
       },
-      // {
-      //   path: 'srp',
-      //   title: 'Single Responsibility Principle',
-      // },
+      {
+        path: 'srp',
+        title: 'Single Responsibility Principle',
+      },
       // {
       //   path: 'reusable-components',
       //   title: 'Reusable Components',

@@ -83,6 +83,11 @@ export const routes: Routes = [
     canActivate: [authGuard],
   },
   {
+    path: 'srp',
+    loadComponent: () => import('./components/srp/srp.component').then((c) => c.SrpComponent),
+    canActivate: [authGuard],
+  },
+  {
     path: 'access-denied',
     loadComponent: () => import('./components/access-denied/access-denied.component').then((c) => c.AccessDeniedComponent),
     canActivate: [authGuard]

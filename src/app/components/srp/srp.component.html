@@ -1,1 +1,26 @@
-<p>srp works!</p>
+<mat-card class="todo-card">
+  <h2>To-Do List</h2>
+
+  <mat-form-field class="full-width">
+    <mat-label>Add Task</mat-label>
+    <input matInput [(ngModel)]="newTask" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="addTask()">Add</button>
+
+  <ng-container *ngIf="srpTodoService.getTasks() as tasks">
+    <mat-list *ngIf="tasks.length > 0">
+    <mat-list-item *ngFor="let task of tasks" [appSrpHighlight]="task.completed">
+        <span class="task-text">{{ task.name }}</span>
+        <button mat-icon-button color="primary" (click)="toggleTask(task)">
+          <mat-icon>check_circle</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteTask(task)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+
+    <p *ngIf="tasks.length === 0" class="empty-message">No tasks yet!</p>
+  </ng-container>
+</mat-card>

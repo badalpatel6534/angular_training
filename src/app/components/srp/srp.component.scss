@@ -1,0 +1,20 @@
+.todo-card {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+  }
+  .full-width {
+    width: 100%;
+  }
+  .task-text {
+    flex: 1;
+  }
+  mat-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .empty-message {
+    text-align: center;
+    color: gray;
+  }
